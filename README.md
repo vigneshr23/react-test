@@ -18,5 +18,6 @@ Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ## Known Issues
- - Issue with Switching View back to Emp List.
+ - Form Validations not handled.
+ - Limited data is displayed in list view.
  
