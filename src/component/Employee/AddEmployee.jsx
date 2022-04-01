@@ -27,7 +27,7 @@ export const AddEmployee = ({ handleAdd, handleViewToggle, employee }) => {
             <form>
                 <div class="mb-3">
                     <label for="firstname" class="form-label">First Name</label>
-                    <input onChange={handleChange} type="text" class="form-control" id="firstname" name='firstname' placeholder="Example input placeholder" value={formState['firstname']} />
+                    <input onChange={handleChange} type="text" class="form-control" id="firstname" name='firstName' placeholder="Example input placeholder" value={formState['firstName']} />
                 </div>
                 <div class="mb-3">
                     <label for="lastName" class="form-label">Last Name</label>
@@ -57,10 +57,3 @@ export const AddEmployee = ({ handleAdd, handleViewToggle, employee }) => {
         </div>
     )
 }
-
-// "firstName": "vignesh",
-//     "lastName": "r",
-//     "dob": "23/11",
-//     "designation": "dev",
-//     "avatar": "",
-//     "experience": "6"

@@ -10,7 +10,7 @@ const Employee = () => {
     const [employee, setEditableEmployee] = useState({})
 
     const handleViewToggle = useCallback((isAddView) => {
-        setAddView(isAddView || true)
+        setAddView(isAddView)
     }, [])
 
     const handleEmployeeAdd = (empDetails) => {
@@ -39,28 +39,25 @@ const Employee = () => {
     const renderEmployees = () => {
         return (
             employees.map(({ firstName, lastName, designation }, idx) => (
-                <Fragment key={idx}>
+                <div className='employee-item' key={idx}>
                     <div><label>First Name: </label>{firstName}</div>
                     <div><label>Last Name: </label>{lastName}</div>
                     <div><label>Designation: </label>{designation}</div>
                     <div className='btn btn-default' onClick={() => handleEdit(idx)}>Edit</div>
                     <div className='btn btn-danger' onClick={(idx) => handleDelete(idx)}>Del</div>
-                </Fragment>
+                </div>
             ))
         )
     }
 
     return (
         <div className='container employee-container'>
-            <h2>Employee page</h2>
-            <nav>
-                <ul></ul>
-            </nav>
+            <h3>Employees List</h3>
             {addView ? <AddEmployee handleAdd={handleEmployeeAdd} handleViewToggle={handleViewToggle} employee={employee} /> : (
                 <div className='container'>
                     <div className='row flex'>{renderEmployees()}</div>
                     <div className="container actions">
-                        <div className='btn btn-primary' onClick={handleViewToggle}>Add Employee</div>
+                        <div className='btn btn-primary' onClick={() => handleViewToggle(true)}>Add Employee</div>
                     </div>
                 </div>
             )}
